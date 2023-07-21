@@ -1,6 +1,6 @@
 import Pagination from 'react-bootstrap/Pagination';
 
-export default function PagesA({ page, handleChangePage = () => {} }) {
+export default function PaginationComponent({ page, handleChangePage = () => {} }) {
   return (
     <Pagination>
       {Array.from({ length: 10 }).map((_, index) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import UseStatistic from "./UseStatistic";
-import PagesA from "./PagesA";
+import Pagination from "./Pagination";
 
 export default function UsersStatitic() {
 
@@ -33,7 +33,7 @@ export default function UsersStatitic() {
           )
         }}
       />
-      <PagesA />
+      <Pagination />
     </div>
   );
 }

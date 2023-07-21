@@ -1,7 +1,6 @@
-import React from "react";
 import UseStatistic from "./UseStatistic";
-import PagesA from "./PagesA";
-import useData from "./useData";
+import Pagination from "./Pagination";
+import useData from "../hooks/useData";
 
 export default function CartsStatistic() {
 
@@ -10,15 +9,15 @@ export default function CartsStatistic() {
     {label: "Date"},
   ]
 
-  const { state, handleChangePage } = useData({
-    url: 'https://jsonplaceholder.typicode.com/albums?_limit=5&_page='
+  const { data, page, handleChangePage } = useData({
+    url: 'https://jsonplaceholder.typicode.com/albums'
   });
 
   return (
     <div>
       <UseStatistic 
         headers={headers}
-        data={state.data}
+        data={data}
         renderRow={data => {
           return (
             <tr key={data.id}>
@@ -28,7 +27,7 @@ export default function CartsStatistic() {
           )
         }}
       />
-      <PagesA page={state.page} handleChangePage={handleChangePage}/>
+      <Pagination page={page} handleChangePage={handleChangePage}/>
     </div>
   );
 }
